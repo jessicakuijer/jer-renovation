@@ -1,0 +1,21 @@
+{
+  "name": "jer-renovations-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "images:build": "node scripts/build-images.mjs",
+    "images:works": "node scripts/convert-works-webp.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "sharp": "^0.33.5",
+    "typescript": "~5.7.3",
+    "vite": "^5.4.14"
+  },
+  "dependencies": {
+    "swiper": "^12.1.4"
+  }
+}

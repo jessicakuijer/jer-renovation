@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <title>Service — JER Rénovation</title>
+  <meta name="description" content="Service de rénovation intérieure proposé par JER Rénovation en Île-de-France." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.webp" type="image/webp" />
+
+  <style>
+    .service-hero { padding: 60px 0 50px; }
+    .service-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .service-hero h1 { margin: 16px 0 18px; }
+    .service-hero .tagline {
+      font-family: var(--font-mono);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+      color: var(--accent-600);
+      text-transform: uppercase;
+    }
+    .service-hero .image-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .service-hero .image-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .service-body {
+      padding: 50px 0 80px;
+      border-top: 1px solid var(--rule);
+    }
+    .service-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .service-body-grid .col-text p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.2em;
+    }
+    .service-quote {
+      grid-column: 1 / -1;
+      padding: 36px 40px;
+      background: var(--ivory-50);
+      border-left: 3px solid var(--accent-600);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      margin: 8px 0;
+    }
+    [data-theme="dark"] .service-quote { background: var(--bg-elev); }
+    .service-quote p {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--text);
+      margin: 0;
+      font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 144;
+      text-wrap: balance;
+    }
+    .service-closing {
+      margin-top: 50px;
+      padding: 40px;
+      background: var(--bg-deep);
+      color: var(--on-deep);
+      border-radius: var(--r-lg);
+      display: grid;
+      grid-template-columns: 1.4fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .service-closing p {
+      color: rgba(244, 240, 230, 0.85);
+      font-size: 1.05rem;
+      margin: 0;
+      max-width: 50ch;
+    }
+    .service-closing .btn-accent { white-space: nowrap; }
+
+    .related {
+      padding: 70px 0 90px;
+      background: var(--ivory-50);
+      border-top: 1px solid var(--rule);
+    }
+    [data-theme="dark"] .related { background: var(--bg-elev); }
+    .related h2 {
+      font-size: 1.8rem;
+      margin-bottom: 36px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 980px) {
+      .service-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .service-body-grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-closing { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .service-quote { padding: 24px 22px; }
+      .service-quote p { font-size: 1.2rem; }
+      .service-closing { padding: 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-screen-label="08 Service détail">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="JER Rénovation — accueil">
+        <img src="/logo-horizontal.webp" alt="Logo JER Rénovation" />
+      </a>
+      <nav class="nav" id="primary-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="zones.html">Zones d'intervention</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://g.page/r/CdSQrfuunZPnEBM/review" target="_blank" rel="noopener">★ Avis</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone-link" href="tel:+33648283591">06 48 28 35 91</a>
+        <button class="theme-toggle" type="button" aria-label="Basculer thème clair / sombre">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu de navigation">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="service-main">
+    <section class="service-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Accueil</a> <span>/</span>
+          <a href="services.html">Services</a> <span>/</span>
+          <span id="bc-current">…</span>
+        </div>
+        <div class="service-hero-grid" style="margin-top: 28px;">
+          <div>
+            <span class="tagline" id="s-tagline">Service</span>
+            <h1 id="s-title">Service</h1>
+            <p class="lede" id="s-intro" style="font-size: 1.15rem; color: var(--text-soft); max-width: 56ch;"></p>
+            <div style="display:flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;">
+              <a class="btn btn-accent" href="contact.html">
+                Demander un devis
+                <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="tel:+33648283591">06 48 28 35 91</a>
+            </div>
+          </div>
+          <div class="image-wrap">
+            <img id="s-image" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-body">
+      <div class="container">
+        <div id="s-body" class="service-body-grid"></div>
+        <div id="s-closing" class="service-closing">
+          <p id="s-closing-text"></p>
+          <a class="btn btn-accent" href="contact.html">
+            Me contacter
+            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="container">
+        <h2>Autres prestations de rénovation</h2>
+        <div id="related-grid" class="related-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/logo-vertical.webp" alt="JER Rénovation" />
+          <p>Entreprise de rénovation intérieure tous corps d'état basée à La Queue-en-Brie. Travaux à Paris et en Île-de-France.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="zones.html">Zones d'intervention</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services phares</h4>
+          <ul>
+            <li><a href="service.html?s=cuisine">Rénovation cuisine</a></li>
+            <li><a href="service.html?s=salle-de-bain">Salle de bain</a></li>
+            <li><a href="service.html?s=parquet">Pose de parquet</a></li>
+            <li><a href="service.html?s=peinture">Peinture intérieure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+33648283591">06 48 28 35 91</a></li>
+            <li>13, rue de Paris<br/>94510 La Queue-en-Brie</li>
+            <li><a href="https://g.page/r/CdSQrfuunZPnEBM/review" target="_blank" rel="noopener">★ Laisser un avis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <time class="jer-copyright-year"></time> JER Rénovation — Tous droits réservés.</span>
+        <div style="display:flex; gap: 20px;">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="vie-privee.html">Vie privée &amp; RGPD</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-cta" aria-label="Actions rapides">
+    <a class="fab" href="contact.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span>Devis gratuit</span>
+    </a>
+    <a class="fab fab-phone" href="tel:+33648283591" aria-label="Appeler JER Rénovation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script type="module" src="/src/pages/service-detail.ts"></script>
+</body>
+</html>
