@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const mqDesk = window.matchMedia(MEDIA_NAV_DESKTOP)
 
   const closeMobileNav = () => {
-    if (menuToggle && nav && nav.classList.contains('open')) {
-      setMobileNav(false, menuToggle, nav)
-    }
+    if (!menuToggle || !nav) return
+    // Resynchroniser body + nav : un `nav-open` orphelin masquait les FAB (voir main.css).
+    setMobileNav(false, menuToggle, nav)
   }
 
   if (menuToggle && nav) {
@@ -90,10 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.querySelectorAll('a').forEach((a) => {
       a.addEventListener('click', () => closeMobileNav())
     })
+
+    if (!nav.classList.contains('open')) {
+      document.body.classList.remove('nav-open')
+    }
   }
 
   const onDeskChange = () => {
-    if (mqDesk.matches) closeMobileNav()
+    if (!menuToggle || !nav) return
+    if (mqDesk.matches) setMobileNav(false, menuToggle, nav)
   }
   mqDesk.addEventListener('change', onDeskChange)
   onDeskChange()
