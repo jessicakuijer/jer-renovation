@@ -70,12 +70,49 @@
         </div>
         <span class="eyebrow">Échangeons sur votre projet</span>
         <h1 style="margin-top: 16px;">Demandez votre <em style="font-style: italic; color: var(--accent-600); font-variation-settings: 'SOFT' 80, 'WONK' 1, 'opsz' 144;">devis gratuit</em></h1>
-        <p class="lede" style="margin-top: 20px;">Téléphone ou visite sur place : choisissez le canal qui vous convient. Je m'engage à revenir vers vous sous 24 heures ouvrées.</p>
+        <p class="lede" style="margin-top: 20px;">Téléphone, e-mail ou visite sur place : choisissez le canal qui vous convient. Je m'engage à revenir vers vous sous 24 heures ouvrées.</p>
       </div>
     </section>
 
     <section class="contact-section">
-      <div class="container-narrow">
+      <div class="container-narrow contact-layout">
+        <form
+          id="contact-quick-form"
+          class="contact-form reveal"
+          action="#"
+          method="get"
+          novalidate
+          aria-labelledby="contact-form-title"
+        >
+          <h2 id="contact-form-title" class="contact-form-title">Message rapide</h2>
+          <p class="contact-form-hint">Remplissez le formulaire : votre application e-mail s’ouvrira pour envoyer le message.</p>
+
+          <div class="contact-form-field">
+            <label for="contact-name">Votre nom</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="120" />
+          </div>
+
+          <div class="contact-form-field">
+            <label for="contact-email">Votre e-mail</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="120" inputmode="email" />
+          </div>
+
+          <div class="contact-form-field">
+            <label for="contact-message">Votre message</label>
+            <textarea id="contact-message" name="message" rows="4" required maxlength="4000" placeholder="Décrivez brièvement votre projet…"></textarea>
+          </div>
+
+          <div class="contact-form-honeypot" aria-hidden="true">
+            <label for="contact-website">Site web</label>
+            <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button class="btn btn-primary contact-form-submit" type="submit">
+            Envoyer par e-mail
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+
         <article class="contact-card reveal" aria-labelledby="contact-card-title">
           <h2 id="contact-card-title" class="contact-card-title">Coordonnées</h2>
 
@@ -163,6 +200,6 @@
     </a>
   </div>
 
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/pages/contact.ts"></script>
 </body>
 </html>

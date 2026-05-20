@@ -1399,13 +1399,96 @@ body.nav-open .floating-cta {
   color: var(--text-soft);
 }
 
-/* Contact page — carte centrée compacte */
+/* Contact page — formulaire + carte */
 .contact-section {
   padding: clamp(2rem, 6vw, 3rem) 0 clamp(3rem, 10vw, 6rem);
+}
+.contact-layout {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 2rem);
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr minmax(280px, 380px);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
+.contact-form {
+  padding: 28px 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+.contact-form-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+.contact-form-hint {
+  margin: 0 0 20px;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+.contact-form-field {
+  margin-bottom: 14px;
+  text-align: left;
+}
+.contact-form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+.contact-form-field input,
+.contact-form-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent-600);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-600) 18%, transparent);
+}
+.contact-form-field textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+.contact-form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.contact-form-submit {
+  width: 100%;
+  margin-top: 6px;
+  justify-content: center;
 }
 .contact-card {
   max-width: 440px;
   margin: 0 auto;
+  width: 100%;
   text-align: center;
   padding: 28px 24px 20px;
   background: var(--bg-elev);
