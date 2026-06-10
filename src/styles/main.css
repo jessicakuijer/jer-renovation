@@ -1122,13 +1122,20 @@ section {
   gap: 20px;
 }
 .footer-ecoindex {
+  display: inline-block;
   opacity: 0.45;
   transform: scale(0.82);
   transform-origin: center right;
   transition: opacity 0.2s ease;
   line-height: 0;
+  text-decoration: none;
 }
 .footer-ecoindex:hover { opacity: 0.82; }
+.footer-ecoindex img {
+  display: block;
+  width: 108px;
+  height: auto;
+}
 
 /* Floating CTA (sticky) */
 body.nav-open .floating-cta {

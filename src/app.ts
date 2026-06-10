@@ -45,19 +45,6 @@ export function observeNewReveals(scope: ParentNode): void {
   attachRevealObserver(scope.querySelectorAll('.reveal:not(.in)') as NodeListOf<Element>)
 }
 
-const ECOINDEX_BADGE_SRC =
-  'https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js'
-
-function initEcoindexBadge(): void {
-  const mount = document.getElementById('ecoindex-badge')
-  if (!mount || document.querySelector(`script[src="${ECOINDEX_BADGE_SRC}"]`)) return
-
-  const script = document.createElement('script')
-  script.src = ECOINDEX_BADGE_SRC
-  script.defer = true
-  document.body.appendChild(script)
-}
-
 function setMobileNav(open: boolean, menuToggle: HTMLButtonElement, nav: HTMLElement): void {
   nav.classList.toggle('open', open)
   menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false')
@@ -131,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   attachRevealObserver(document.querySelectorAll('.reveal'))
-  initEcoindexBadge()
 
   const header = document.querySelector('.site-header') as HTMLElement | null
   if (header) {
